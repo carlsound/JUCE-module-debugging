@@ -15,8 +15,8 @@ namespace juce
 		ConsoleOutput() = default;
 		~ConsoleOutput() = default;
 		//------------------------------------
-		void consoleOutput(std::string &string);
-		void consoleOutput(juce::String &string);
+		static void consoleOutput(std::string &string);
+		static void consoleOutput(juce::String &string);
 		//
 		//ConsoleOutput& operator<<(std::string &string);
 		//ConsoleOutput& operator<<(juce::String &string);
