@@ -8,11 +8,14 @@ namespace juce
 	{
 	public:
 		//------------------------------------
-		static void consoleOutput(std::string string);
-		static void consoleOutput(juce::String string);
+		ConsoleOutput() = default;
+		~ConsoleOutput() = default;
+		//------------------------------------
+		void consoleOutput(std::string string);
+		void consoleOutput(juce::String string);
 		//
-		static void operator<<(ConsoleOutput &cout, std::string &string);
-		static void operator<<(ConsoleOutput &cout, juce::String &string);
+		ConsoleOutput& operator<<(std::string &string);
+		ConsoleOutput& operator<<(juce::String &string);
 
 	protected:
 		//------------------------------------

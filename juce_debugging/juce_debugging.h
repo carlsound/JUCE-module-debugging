@@ -24,7 +24,7 @@ END_JUCE_MODULE_DECLARATION
 #pragma once
 #define JUCE_DEBUGGING_H_INCLUDED
 
-#nclude <juce_core/juce_core.h>
+#include <juce_core/juce_core.h>
 
 //==============================================================================
-#include "debugging/ConsoleOutput.h"
+#include "./debugging/ConsoleOutput.h"

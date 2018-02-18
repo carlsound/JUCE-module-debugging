@@ -2,7 +2,7 @@
 
 namespace juce
 {
-	static void consoleOutput(std::string string)
+	void consoleOutput(std::string string)
 	{
 		if (SystemStats::getOperatingSystemType() && SystemStats::OperatingSystemType::MacOSX)
 		{
@@ -16,7 +16,7 @@ namespace juce
 		}
 	}
 
-	static void consoleOutput(juce::String string)
+	void consoleOutput(juce::String string)
 	{
 		if (SystemStats::getOperatingSystemType() && SystemStats::OperatingSystemType::MacOSX)
 		{
@@ -30,7 +30,7 @@ namespace juce
 		}
 	}
 
-	static void operator<<(ConsoleOutput &cout, std::string &string)
+	ConsoleOutput& operator<<(std::string &string)
 	{
 		if (SystemStats::getOperatingSystemType() && SystemStats::OperatingSystemType::MacOSX)
 		{
@@ -41,10 +41,12 @@ namespace juce
 		{
 			OutputDebugStringA(string.c_str());
 			OutputDebugStringA("\n");
+
+			return this;
 		}
 	}
 
-	static void operator<<(ConsoleOutput &cout,  juce::String &string)
+	ConsoleOutput& operator<<(juce::String &string)
 	{
 		if (SystemStats::getOperatingSystemType() && SystemStats::OperatingSystemType::MacOSX)
 		{
@@ -56,5 +58,7 @@ namespace juce
 			OutputDebugStringA(string.toStdString().c_str());
 			OutputDebugStringA("\n");
 		}
+
+		return this;
 	}
 }
