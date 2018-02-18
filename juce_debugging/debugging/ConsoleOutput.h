@@ -1,6 +1,10 @@
 #pragma once
 
-#include <juce_core/juce_core.h>
+#include <JuceHeader.h>
+
+#if defined (_WIN32) || defined (_WIN64)
+#include <Windows.h>
+#endif
 
 namespace juce
 {
@@ -11,11 +15,11 @@ namespace juce
 		ConsoleOutput() = default;
 		~ConsoleOutput() = default;
 		//------------------------------------
-		void consoleOutput(std::string string);
-		void consoleOutput(juce::String string);
+		void consoleOutput(std::string &string);
+		void consoleOutput(juce::String &string);
 		//
-		ConsoleOutput& operator<<(std::string &string);
-		ConsoleOutput& operator<<(juce::String &string);
+		//ConsoleOutput& operator<<(std::string &string);
+		//ConsoleOutput& operator<<(juce::String &string);
 
 	protected:
 		//------------------------------------
