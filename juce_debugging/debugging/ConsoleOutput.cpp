@@ -30,7 +30,7 @@ namespace juce
 		}
 	}
 
-	static void operator<<(std::string &string)
+	static void operator<<(ConsoleOutput &cout, std::string &string)
 	{
 		if (SystemStats::getOperatingSystemType() && SystemStats::OperatingSystemType::MacOSX)
 		{
@@ -44,7 +44,7 @@ namespace juce
 		}
 	}
 
-	static void operator<<(juce::String &string)
+	static void operator<<(ConsoleOutput &cout,  juce::String &string)
 	{
 		if (SystemStats::getOperatingSystemType() && SystemStats::OperatingSystemType::MacOSX)
 		{

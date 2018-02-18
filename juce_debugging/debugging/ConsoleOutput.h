@@ -11,8 +11,8 @@ namespace juce
 		static void consoleOutput(std::string string);
 		static void consoleOutput(juce::String string);
 		//
-		static void operator<<(std::string &string);
-		static void operator<<(juce::String &string);
+		static void operator<<(ConsoleOutput &cout, std::string &string);
+		static void operator<<(ConsoleOutput &cout, juce::String &string);
 
 	protected:
 		//------------------------------------
